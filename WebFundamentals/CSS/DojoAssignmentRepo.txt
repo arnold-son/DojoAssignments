@@ -1,0 +1,27 @@
+C:\Users\Arnold Son>cd Desktop
+C:\Users\Arnold Son\Desktop>cd DojoAssignments
+#went into the DojoAssignments directory
+
+C:\Users\Arnold Son\Desktop\DojoAssignments>git init
+#initialized git in \DojoAssignments
+
+C:\Users\Arnold Son\Desktop\DojoAssignments>git add .
+#moved content to staging area
+
+C:\Users\Arnold Son\Desktop\DojoAssignments>git commit -m "six directories added"
+#first commit
+
+C:\Users\Arnold Son\Desktop\DojoAssignments>git remote add origin https://github.com/arnold-son/DojoAssignments.git
+C:\Users\Arnold Son\Desktop\DojoAssignments>git push -u origin master
+#added remote and pushed
+
+C:\Users\Arnold Son\Desktop\DojoAssignments>copy NUL readme.md
+C:\Users\Arnold Son\Desktop\DojoAssignments>git status
+#created readme.md and checked git status
+
+C:\Users\Arnold Son\Desktop\DojoAssignments>git add .
+C:\Users\Arnold Son\Desktop\DojoAssignments>git commit -m "added readme.md"
+#git added all and commit #2
+
+C:\Users\Arnold Son\Desktop\DojoAssignments>git push -u origin master
+#pushed to origin

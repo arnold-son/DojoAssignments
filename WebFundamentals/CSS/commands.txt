@@ -1,0 +1,33 @@
+C:\Users\Arnold Son>cd Desktop
+
+C:\Users\Arnold Son\Desktop>md test
+
+C:\Users\Arnold Son\Desktop>cd test
+
+C:\Users\Arnold Son\Desktop\test>copy NUL index.html
+
+C:\Users\Arnold Son\Desktop\test>copy NUL styles.css
+
+C:\Users\Arnold Son\Desktop\test>copy NUL aboutMe.txt
+
+C:\Users\Arnold Son\Desktop\test>git init
+
+C:\Users\Arnold Son\Desktop\test>git add .
+
+C:\Users\Arnold Son\Desktop\test>git commit -m "added index.html, styles.css, aboutMe.txt"
+
+C:\Users\Arnold Son\Desktop\test>git add .
+
+C:\Users\Arnold Son\Desktop\test>git commit -m "updated aboutMe"
+
+C:\Users\Arnold Son\Desktop\test>git add .
+
+C:\Users\Arnold Son\Desktop\test>git commit -m "added favorite movie to aboutMe"
+
+C:\Users\Arnold Son\Desktop\test>git revert -n HEAD
+
+C:\Users\Arnold Son\Desktop\test>git commit -m "revert a1c3467"
+
+C:\Users\Arnold Son\Desktop\test>git add .
+
+C:\Users\Arnold Son\Desktop\test>git commit -m "readded favorite movie"
