@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pokemon</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <style>
+            .images{
+                width: 800px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="images"></div>
+    </body>
+    <script>
+        function loadImages(){
+            var html_str = "";
+            for(var i = 1; i < 152; i++){
+                html_str+= "<img id='"+i+"' src='http://pokeapi.co/media/img/"+i+".png'>"
+            }
+            $(".images").append(html_str);
+        }
+        loadImages();
+
+    </script>
+</html>
