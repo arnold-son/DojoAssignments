@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pokemon</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <style>
+            *{
+                border: 0;
+                margin: 0;
+                padding: 0;
+            }
+            .images{
+                display: inline-block;
+                width: 800px;
+            }
+            .pokedex{
+                text-align: center;
+                vertical-align: top;
+                display: inline-block;
+                position: fixed;
+                height: 500px;
+                width: 250px;
+                border: 20px solid red;
+            }
+            li{
+                list-style: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="images"></div>
+        <div class="pokedex"></div>
+    </body>
+    <script>
+        function loadImages(){
+            var html_str = "";
+            for(var i = 1; i < 152; i++){
+                html_str+= "<img id='"+i+"' src='http://pokeapi.co/media/img/"+i+".png'>"
+            }
+            $(".images").append(html_str);
+        }
+        loadImages();
+        $(document).on("click", "img", function(){
+            var current = $(this).attr("id");
+            $.get("http://pokeapi.co/api/v2/pokemon/"+$(this).attr("id")+"/", function(res){
+                console.log(res.types[0].type.name);
+
+                var str = "<h1>"+res.name+"</h1><br>";
+                str+= "<img src='http://pokeapi.co/media/img/"+current+".png'><br>";
+                str+= "<h5>Types</h5><br><ul>";
+                for(var i = 0; i < res.types.length; i++){
+                    str+= "<li>" + res.types[i].type.name + "</li>";
+                }
+                str+= "</ul><br><h5>Height</h5><br>";
+                str+= "<p>"+res.height+"</p><br><h5>Weight</h5><br>"
+                str+= "<p>"+res.weight+"</p>"
+
+                $(".pokedex").html(str);
+            }, "json");
+        });
+    </script>
+</html>
