@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('form').submit(function() {
+                var url = "http://api.openweathermap.org/data/2.5/weather?q="+$("input").val()+"&units=imperial&APPID=266e4ce5720a071426098fb6a1a7d340";
+                console.log(url);
+                    $.get(url, function(res) {
+                        var str="<h1>"+res.name+"</h1><br><p>"+res.main.temp+"</p>";
+                        $("#result").html(str);
+                    }, 'json');
+                return false;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form>
+            <input id="search" type="text">
+            <input type="submit" value="Search Weather">
+        </form>
+        <div id="result"></div>
+    </body>
+</html>
